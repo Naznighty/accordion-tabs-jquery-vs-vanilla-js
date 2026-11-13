@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Accordion و Tabs: jQuery در برابر JS خام</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Accordion و Tabs: jQuery در برابر JS خام</h1>
+      <p class="lead">
+        هر دو ستون یک رفتار را دارند: آکاردئون باز و بسته می‌شود (هر بار یک بخش
+        باز)، و تب‌ها بین پنل‌ها جابه‌جا می‌شوند. HTML و CSS یکی است؛ فقط
+        جاوااسکریپت فرق دارد.
+      </p>
+
+      <div class="cols">
+        <section class="col jq">
+          <h2><span>jQuery</span> 3.7.1</h2>
+          <h3>Accordion</h3>
+          <div id="acc-jq"></div>
+          <h3>Tabs</h3>
+          <div class="tabs" id="tabs-jq"></div>
+        </section>
+        <section class="col js">
+          <h2><span>JS خام</span> (ES6)</h2>
+          <h3>Accordion</h3>
+          <div id="acc-js"></div>
+          <h3>Tabs</h3>
+          <div class="tabs" id="tabs-js"></div>
+        </section>
+      </div>
+
+      <section class="cmp">
+        <h2>مقایسه</h2>
+        <div class="wrap">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>jQuery</th>
+                <th>JS خام</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>حجم کد خودمان</td>
+                <td id="jq-b"></td>
+                <td id="js-b"></td>
+              </tr>
+              <tr>
+                <td>تعداد خط</td>
+                <td id="jq-l"></td>
+                <td id="js-l"></td>
+              </tr>
+              <tr>
+                <td>وابستگی</td>
+                <td>کتابخانه ≈ ۸۷ کیلوبایت (≈ ۳۰ فشرده)</td>
+                <td>هیچ</td>
+              </tr>
+              <tr>
+                <td>خوانایی</td>
+                <td>
+                  کوتاه‌تر و زنجیره‌ای؛ <code>siblings()</code> و
+                  <code>toggleClass(name, state)</code> کار را ساده می‌کنند
+                </td>
+                <td>
+                  کمی بلندتر؛ حلقهٔ صریح روی <code>querySelectorAll</code>، ولی
+                  هیچ چیز پنهان نیست
+                </td>
+              </tr>
+              <tr>
+                <td>نتیجه</td>
+                <td>برای پروژه‌ای که jQuery را از قبل دارد مناسب است</td>
+                <td>برای پروژهٔ جدید بهتر است: کد کمی بلندتر، بدون وابستگی</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="codes">
+          <pre id="jq-pre"></pre>
+          <pre id="js-pre"></pre>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/render.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery-version.js"></script>
+    <script src="js/vanilla-version.js"></script>
+    <script src="js/stats.js"></script>
+  </body>
+</html>
